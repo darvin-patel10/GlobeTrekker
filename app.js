@@ -87,7 +87,7 @@ app.get("/listing/:id", async (req,res) =>{
     res.render("listings/show.ejs", { listing });
 });
 
-app.get("/listings", async (req,res) => {
+app.get("/", async (req,res) => {
     const allListings = await Listing.find({})
     // .then((res) => {
         res.render("listings/index.ejs", { allListings });

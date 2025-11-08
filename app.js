@@ -5,6 +5,10 @@ const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+require('dotenv').config();
+
+const dbUrl = process.env.MONGO_URL;
+const port = process.env.PORT;
 
 main()
     .then(() =>{
@@ -15,7 +19,7 @@ main()
     });
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/wanderlist');
+    await mongoose.connect(dbUrl);
 }
 
 app.set("view engine","ejs");
@@ -91,6 +95,6 @@ app.get("/listings", async (req,res) => {
     // });
 });
 
-app.listen(8080, () =>{
+app.listen(port, () =>{
     console.log("port 8080 is listening ");
 });

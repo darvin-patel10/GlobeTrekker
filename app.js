@@ -8,7 +8,7 @@ const ejsMate = require("ejs-mate");
 require('dotenv').config();
 
 const dbUrl = process.env.MONGO_URL;
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
 main()
     .then(() =>{

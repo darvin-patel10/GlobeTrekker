@@ -12,10 +12,10 @@ const port = process.env.PORT || 8080;
 
 main()
     .then(() =>{
-        console.log("connected to DB");
+        console.log("✅ MongoDB connected successfully!");
     })
     .catch((err)=>{
-        console.log(err);
+        console.log('❌ MongoDB connection failed:', err);
     });
 
 async function main() {
